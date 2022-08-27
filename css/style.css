@@ -1,0 +1,14 @@
+.btng {
+    background-color: #4684a7;
+    color: #e8ede9;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+}
+
+.divbot {
+    display: flex;
+    justify-content: right;
+}
