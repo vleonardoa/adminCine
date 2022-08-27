@@ -7,10 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>CRUD</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="JS/CallAjax.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 <body class="p-3 m-0 border-0 bd-example bd-example-row">
@@ -18,37 +16,56 @@
     <!-- Example Code -->
 
     <div class="container text-left">
+        <div id="alerta" style="visibility:hidden;" class=" alert alert-success d-flex justify-content-between align-items-center">
+            <strong>¡Guardado Correctamente!</strong>
+            <button onclick="cerraralert()" button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
         <div class="divbot">
             <button type="button" class="btn btn-primary btng" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Registro
             </button>
-
         </div>
 
+
         <div class="row">
-            <div class="float-right col-sm-4 ">
+            <div class="float-right col-sm-4">
                 <!-- Button trigger modal -->
-
-
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Guardar Alumno</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Guardar Pelicula</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
+
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" autocomplete="off" id="txtNombre" required placeholder="Ingrese Nombre">
+                                    <label for="exampleFormControlInput1" class="form-label">ID</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtId" required placeholder="Ingrese ID">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" autocomplete="off" id="txtApellido" required placeholder="Ingrese Apellido">
+                                    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtTitulo" required placeholder="Ingrese Titulo">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                                    <label for="exampleFormControlInput1" class="form-label">Tipo</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtTipo" required placeholder="Ingrese Tipo">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Poster</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtPoster" required placeholder="Ingrese url">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Año</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtAño" required placeholder="Ingrese Año">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Ubicacion</label>
+                                    <input type="text" class="form-control" autocomplete="off" id="txtUbicacion" required placeholder="Ingrese Ubicacion">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
                                     <textarea class="form-control" id="txtMensaje" autocomplete="off" rows="3" required></textarea>
                                 </div>
                             </div>
@@ -70,11 +87,14 @@
                 <table class="table">
                     <thead class="table-success">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Mensaje</th>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Poster</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Ubicacion</th>
+                            <th scope="col">Estado</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -88,6 +108,8 @@
     </div>
 
     <!-- End Example Code -->
+    <script src=" JS/CallAjax.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
