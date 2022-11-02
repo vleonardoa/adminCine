@@ -104,11 +104,13 @@ function llamadaDemo() {
                 button.addEventListener("click", (event) => {
 
                     cade = event.target.parentNode.parentNode.innerHTML;
+                    console.log(cade);
                     var cadena = cade.slice(4, -2);
                     var cadena2 = cadena.split("<");
                     console.log(cadena2[0]);
                     id = cadena2[0];
                     delet(id);
+                    window.location.href = window.location.href;
                 })
                 row.appendChild(cell8);
                 tbodyUser.appendChild(row);
@@ -124,8 +126,6 @@ function delet(id) {
             method: 'delete'
         })
         .then(response => response.json());
-    console.log(response);
-    location.href = "index.html";
 }
 
 function ActualizarDatos() {
